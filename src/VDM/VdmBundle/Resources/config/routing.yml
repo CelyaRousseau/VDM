@@ -1,0 +1,11 @@
+vdm_homepage:
+    path:     /
+    defaults: { _controller: VdmBundle:Default:index }
+
+showAll:
+    path:     /api/posts
+    defaults: {_controller: VdmBundle:Default:showAll }
+
+showById:
+    path:     /api/posts/{$id}
+    defaults: {_controller: VdmBundle:Default:showById }
