@@ -1,0 +1,9 @@
+# Symfony directories
+/vendor/*
+*/logs/*
+*/cache/*
+
+# Configuration files
+app/config/*
+
+
