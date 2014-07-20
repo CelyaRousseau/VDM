@@ -1,6 +1,6 @@
 <?php
 
-namespace VDM\VdmBundle\Entity;
+namespace VDM\ApiBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Vdm
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="VDM\VdmBundle\Entity\VdmRepository")
+ * @ORM\Entity(repositoryClass="VDM\ApiBundle\Entity\VdmRepository")
  */
 class Vdm
 {

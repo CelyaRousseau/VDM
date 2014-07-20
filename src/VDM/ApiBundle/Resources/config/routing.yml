@@ -1,0 +1,4 @@
+# le routing.yml de notre bundle
+posts:
+    type:     rest
+    resource: VDM\ApiBundle\Controller\PostsController

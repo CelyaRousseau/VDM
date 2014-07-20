@@ -1,15 +1,15 @@
 <?php 
 
 
-// src/VDM/VdmBundle/Command/VdmCommand.php
-namespace VDM\VdmBundle\Command;
+// src/VDM/ApiBundle/Command/VdmCommand.php
+namespace VDM\ApiBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use VDM\VdmBundle\Entity\Vdm;
+use VDM\ApiBundle\Entity\Vdm;
 use Doctrine\ORM\EntityManager;
 use \DateTime;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace VDM\VdmBundle\Entity;
+namespace VDM\ApiBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 

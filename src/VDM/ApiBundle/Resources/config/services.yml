@@ -1,5 +1,5 @@
 parameters:
-#    vdm.example.class: VDM\VdmBundle\Example
+#    vdm.example.class: VDM\ApiBundle\Example
 
 services:
 #    vdm.example:

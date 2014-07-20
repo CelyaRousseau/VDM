@@ -1,9 +1,9 @@
 <?php
 
-namespace VDM\VdmBundle;
+namespace VDM\ApiBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class VdmBundle extends Bundle
+class ApiBundle extends Bundle
 {
 }
