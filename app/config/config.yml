@@ -68,7 +68,19 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+sensio_framework_extra:
+    view:
+        annotations: false
+
 fos_rest:
     routing_loader:
         default_format: json
         include_format: false
+    param_fetcher_listener: true
+    body_listener: true
+    format_listener: true
+    view:
+        view_response_listener: force
+        formats:
+            jsonp: true
+            json: true

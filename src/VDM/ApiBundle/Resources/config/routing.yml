@@ -1,4 +1,5 @@
 # le routing.yml de notre bundle
 posts:
     type:     rest
+    defaults: {_format: json} 
     resource: VDM\ApiBundle\Controller\PostsController
