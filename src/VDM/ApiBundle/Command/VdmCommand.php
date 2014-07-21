@@ -48,7 +48,7 @@ class VdmCommand extends ContainerAwareCommand
       $vdm->setContent($content);
 
       $this->em->persist($vdm);
-      $this->em->flush();
     }
+    $this->em->flush();
   }
 }
