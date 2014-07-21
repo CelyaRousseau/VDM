@@ -3,6 +3,7 @@
 namespace VDM\ApiBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+// use \DateTime;
 
 /**
  * VdmRepository
@@ -12,4 +13,25 @@ use Doctrine\ORM\EntityRepository;
  */
 class VdmRepository extends EntityRepository
 {
+   public function findVdmByParameters($params)
+    {
+      $query = $this->createQueryBuilder('myVdm');
+
+      if($params['author'] !== null){
+        $query->where('myVdm.author = :author')
+              ->setParameter('author', $params['author']);
+      }
+
+      if($params['from'] !== null){
+        $query->andWhere('myVdm.published >= :from')
+              ->setParameter('from', $params['from']);
+      }
+
+      if($params['to'] !== null){
+        $query->andWhere('myVdm.published <= :to')
+              ->setParameter('to', $params['to']);
+      }
+
+      return $query->getQuery()->getResult();
+    }
 }
