@@ -35,10 +35,15 @@ class VdmRepository extends EntityRepository
       return $query->getQuery()->getResult();
     }
 
+  // Function to delete table and reset auto increment
   public function deleteAll()
     {
-      $query = $this->createQueryBuilder('deleteAll');
-      $query->delete();
-      $query->getQuery()->execute();
+      $em = $this->getEntityManager();
+      $sql = 'TRUNCATE TABLE Vdm;';
+      $connection = $em->getConnection();
+
+      $stmt = $connection->prepare($sql);
+      $stmt->execute();
+      $stmt->closeCursor();
     }
 }

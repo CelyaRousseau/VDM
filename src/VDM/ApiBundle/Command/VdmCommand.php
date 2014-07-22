@@ -21,7 +21,7 @@ class VdmCommand extends ContainerAwareCommand
   {
     $this
         ->setName('vdm:flux')
-        ->setDescription('Récupère les dernières Vie de Merde');
+        ->setDescription('Extract the last 200 VDM and insert them into database');
   }
 
   protected function execute(InputInterface $input, OutputInterface $output)
@@ -29,10 +29,11 @@ class VdmCommand extends ContainerAwareCommand
     $kernel      = $this->getContainer()->get('kernel');
     $this->path  = $kernel->locateResource('@ApiBundle/Resources/public/html');
     $this->em    = $this->getContainer()->get('doctrine')->getManager();
-
+    $output->writeln('<info>Current processing</info>');
     $this->wrapper();
   }
 
+  // Function to extract Vdm to Viedemerde.fr
   protected function wrapper(){
     $html = $this->path."/vdm.html";
     $i    = 0;
@@ -50,6 +51,7 @@ class VdmCommand extends ContainerAwareCommand
     $this->em->flush();
   }
 
+  // Function to parse Html Extracted
   protected function read($url, $j)
   {
     $file       = file_get_contents($url);
@@ -75,7 +77,7 @@ class VdmCommand extends ContainerAwareCommand
   }
 
 
-  // Parsing and extraction of html
+  // Collect content of curent VDM
   public function getContent($nodes){
     $content = $nodes->filterXPath("//a[@class='fmllink']")->each(function ($node, $i) {
         return $node->text();
@@ -85,6 +87,7 @@ class VdmCommand extends ContainerAwareCommand
     return $content_str;
   }
 
+  // Collect published date of current VDM
   public function getPublished($node){
     $published = $node->filterXPath("//div[@class='right_part']/p/text()[substring-before(.,' -')]")->last()->text();
 
@@ -95,6 +98,7 @@ class VdmCommand extends ContainerAwareCommand
     return $published;
   }
 
+  // Collect author of  current VDM
   public function getAuthor($node){
     $author = $node->filterXPath("//div[@class='right_part']/p/text()[substring-after(.,'- ')]")->last()->text();
 
