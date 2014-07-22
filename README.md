@@ -15,7 +15,7 @@ git clone https://github.com/CelyaRousseau/VDM.git
 ```
 $ php composer.phar install
 ```
-* Create your database and then modify app/config/config.yml file with your paramaters
+* Create your database and then modify app/config/parameters.yml file with your paramaters
 * Update your database schema 
 ```
 $ php app/console doctrine:schema:update --force
@@ -24,7 +24,7 @@ $ php app/console doctrine:schema:update --force
 ```
 $ php app/console vdm:flux
 ```
-* Launch Api and have fun !
+* Launch Api and have fun -> [ note : Think to configure your web server ! ]
 
 ```
 $ php app/console router:debug | grep api
