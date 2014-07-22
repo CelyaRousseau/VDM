@@ -13,9 +13,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class PostsController extends FOSRestController
 {
-
-
- 
     /**
      * @QueryParam(name="from", description=" date from vdm", nullable=true)
      * @QueryParam(name="to", description="date to vdm", nullable=true)
