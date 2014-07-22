@@ -31,17 +31,15 @@ class PostsController extends FOSRestController
 
         $em   = $this->getDoctrine()->getManager();
         $data = $em->getRepository('ApiBundle:Vdm')->findVdmByParameters($params);
+        $count = count($data);
 
-        return $data;
+        return array('Posts' => $data, 'count' => $count);
     }
 
     public function getPostAction($id){
         $em = $this->getDoctrine()->getManager();
-
-
-        return $em->getRepository('ApiBundle:Vdm')->find($id);
-
-        
+        $post = $em->getRepository('ApiBundle:Vdm')->find($id);
+        return array('Post' => $post);
     }
 
 }

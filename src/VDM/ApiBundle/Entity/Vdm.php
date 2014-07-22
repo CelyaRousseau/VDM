@@ -22,11 +22,11 @@ class Vdm
     private $id;
 
     /**
-     * @var string
+     * @var text
      *
-     * @ORM\Column(name="Author", type="string", length=255)
+     * @ORM\Column(name="Content", type="text")
      */
-    private $author;
+    private $content;
 
     /**
      * @var \DateTime
@@ -34,14 +34,13 @@ class Vdm
      * @ORM\Column(name="Published", type="datetime")
      */
     private $published;
-
+    
     /**
-     * @var text
+     * @var string
      *
-     * @ORM\Column(name="Content", type="text")
+     * @ORM\Column(name="Author", type="string", length=255)
      */
-    private $content;
-
+    private $author;
 
     /**
      * Get id
