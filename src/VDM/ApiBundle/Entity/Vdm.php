@@ -36,9 +36,9 @@ class Vdm
     private $published;
 
     /**
-     * @var string
+     * @var text
      *
-     * @ORM\Column(name="Content", type="string", length=255)
+     * @ORM\Column(name="Content", type="text")
      */
     private $content;
 
