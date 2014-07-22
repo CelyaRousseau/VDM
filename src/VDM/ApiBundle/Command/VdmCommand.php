@@ -46,6 +46,7 @@ class VdmCommand extends ContainerAwareCommand
         file_put_contents($this->path."/vdm.html",$current);
         $j = $this->read($html, $j);
       }
+    $this->em->getRepository('ApiBundle:Vdm')->deleteAll();
     $this->em->flush();
   }
 

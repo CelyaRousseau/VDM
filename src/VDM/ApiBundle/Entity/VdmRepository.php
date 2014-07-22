@@ -34,4 +34,11 @@ class VdmRepository extends EntityRepository
 
       return $query->getQuery()->getResult();
     }
+
+  public function deleteAll()
+    {
+      $query = $this->createQueryBuilder('deleteAll');
+      $query->delete();
+      $query->getQuery()->execute();
+    }
 }
