@@ -11,12 +11,10 @@ class PostsControllerTest extends WebTestCase
     public function testgetPosts()
     {
       $client   = static::createClient();
-      $crawler = $client->request('GET', '/api/posts');
-
+      $crawler  = $client->request('GET', '/api/posts');
 
       $response = $client->getResponse();
       $this->assertJsonResponse($response, 200);
-
 
       // Vérifie que la réponse est bien un json
       $this->assertTrue($client->getResponse()->headers->contains('Content-Type', 'application/json'));
@@ -26,7 +24,10 @@ class PostsControllerTest extends WebTestCase
     public function testgetPost()
     {
       $client   = static::createClient();
-      $crawler = $client->request('GET', '/api/post/{id}');
+      $crawler  = $client->request('GET', '/api/post/{id}');
+
+       // Vérifie que la réponse est bien un json
+      $this->assertTrue($client->getResponse()->headers->contains('Content-Type', 'application/json'));
     }
 
     protected function assertJsonResponse($response, $statusCode = 200)
